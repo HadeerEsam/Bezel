@@ -298,6 +298,9 @@ header .btn-brdr{
 #pricing{
     background-color: #f7f7f7;
 }
+#pricing .main-title::before{
+    content: "C";
+}
 #pricing .pricing-card{
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
     background-color: white;
