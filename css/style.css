@@ -4,6 +4,8 @@ body{
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: #1f1f1f;
+    position: relative;
+    overflow: hidden;
 }
 p{
     font-family: 'Source Sans Pro', sans-serif;
@@ -16,24 +18,90 @@ p{
 
 }
 
+#loading{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f7f7f7;
+    z-index: 99999999999;
+}
+.spinner {
+    margin: 300px auto;
+    width: 50px;
+    height: 100px;
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  .spinner > div {
+    background-color: rgb(51, 51, 51);
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  }
+  
+  .spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+  }
+  
+  .spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+  .spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+  
+  .spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
+  
+  @-webkit-keyframes sk-stretchdelay {
+    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+    20% { -webkit-transform: scaleY(1.0) }
+  }
+  
+  @keyframes sk-stretchdelay {
+    0%, 40%, 100% { 
+      transform: scaleY(0.4);
+      -webkit-transform: scaleY(0.4);
+    }  20% { 
+      transform: scaleY(1.0);
+      -webkit-transform: scaleY(1.0);
+    }
+  }
 
 /*******************************header***********************************************/
 header{
-
-    background-color: white;
+    /* background-color: white; */
+    transition: all 0.5s;
     box-shadow: 5px 5px 15px rgba(31, 31, 31, 0.07);
 
 }
 header .navbar-collapse{
     border-top: 1px solid #e6e6e6;
     padding-left: 1rem;
+    background-color: white;
+    
 }
 header .nav-item{
     padding-left: 0.3rem;
     padding-right: 0.3rem;
 }
+
+
 header .nav-item a{
-    color: #393939 !important;
+    color: #393939;
+    transition: color 0.5s;
     margin-bottom: 1rem;
     font-size: 0.85rem;
     font-weight: 500;
@@ -55,6 +123,9 @@ header button:focus{
 header .btn-brdr{
     padding: 0.5rem ;
     border-left: 1px solid #e6e6e6;
+}
+#tooglebtn{
+    color:white;
 }
 
 /******************************************banner***************************************/
@@ -110,8 +181,6 @@ header .btn-brdr{
 }
 .carousel-btn{
     animation: zoom-in- 0.5s 1s ease both;   
-    
-
 }
 
 @keyframes zoom-in-{
@@ -147,15 +216,12 @@ header .btn-brdr{
 
 }
 @keyframes bg {
-    
-    
     100%{
         
         background-image: linear-gradient(to right bottom, transparent, rgba(255, 255, 255, 0.4), transparent);
     }
 }
 #banner .carousel-control-prev, #banner .carousel-control-next{
-
     opacity: 0;
 }
 
@@ -429,7 +495,13 @@ iframe{
     height: 70vh;  
 }
 
-
+.slideUp{
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    display: none;
+    z-index: 999999;
+}
 
 
 
@@ -509,18 +581,20 @@ iframe{
     .container{
         max-width: 85%;
     }
-   
+   header{
+       background-color: transparent;
+   }
     header .navbar-collapse{
         border-top:none;
         border-bottom: none;
         border-right: 1px solid #e6e6e6;
+        background-color: transparent;
 
     }
     header .nav-item a{
-        color: #242424 !important;  
-        margin-bottom: 0;           
-    }
-    
+        margin-bottom: 0; 
+        color:white;          
+    }    
     header .btn-brdr{
         padding: 0;
         border-left: none;
